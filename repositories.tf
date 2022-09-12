@@ -1,5 +1,5 @@
 module "branch-protection" {
-  source             = "./branch_protection"
+  source             = "./modules/branch_protection"
   for_each           = local.configuration.repositories
   repository         = each.key
   branch             = each.value.branch-protection.branch

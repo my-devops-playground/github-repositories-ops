@@ -1,0 +1,9 @@
+# directories
+.terraform
+.terraform.lock.*
+
+# files
+*.tfvars
+*.tfstate
+*.tfstate.*
+*.pkrvars.*

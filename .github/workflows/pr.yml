@@ -30,6 +30,8 @@ jobs:
 
       - name: Execute Terraform
         uses: hashicorp/setup-terraform@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.TF_VAR_GITHUB_TOKEN }}
 
       - name: Terraform init
         id: init

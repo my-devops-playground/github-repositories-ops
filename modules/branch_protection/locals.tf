@@ -2,7 +2,8 @@ locals {
   repository = var.repository
 
   branch_protection = {
-    branch = var.branch
+    branch         = var.branch
+    signed_commits = var.signed_commits
     pull_requests = {
       codeowners                = var.codeowners
       codeowners_commit_message = var.codeowners_commit_message

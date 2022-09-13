@@ -12,8 +12,9 @@ resource "github_repository_file" "codeowners_file_upload" {
 }
 
 resource "github_branch_protection" "branch_protection" {
-  repository_id = data.github_repository.repository.node_id
-  pattern       = local.branch_protection.branch
+  repository_id          = data.github_repository.repository.node_id
+  pattern                = local.branch_protection.branch
+  require_signed_commits = local.branch_protection.signed_commits
 
   required_pull_request_reviews {
     require_code_owner_reviews      = length(local.branch_protection.pull_requests.codeowners) > 0

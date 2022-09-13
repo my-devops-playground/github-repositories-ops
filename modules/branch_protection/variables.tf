@@ -9,6 +9,12 @@ variable "branch" {
   description = "Name of the branch to protect"
 }
 
+variable "signed_commits" {
+  type        = bool
+  description = "Whether or not to force to do signed commits"
+  default     = true
+}
+
 variable "review_count" {
   type        = number
   description = "Number of reviews required before letting a pull request to pass"

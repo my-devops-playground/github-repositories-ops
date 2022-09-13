@@ -3,7 +3,7 @@ on:
   pull_request:
 jobs:
   tfsec:
-    name: tfsec sarif report
+    name: tfsec report
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +21,7 @@ jobs:
           sarif_file: tfsec.sarif
 
   tfplan:
-    name: Terraform plan validation
+    name: terraform plan validation
     runs-on: ubuntu-latest
 
     steps:
@@ -44,7 +44,7 @@ jobs:
 
       - name: Update Pull Request
         uses: actions/github-script@v6
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && steps.plan.outcome != 'failure'
         env:
           PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
         with:

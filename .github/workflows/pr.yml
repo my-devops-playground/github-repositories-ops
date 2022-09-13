@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clone repo
+        uses: actions/checkout@main
+
       - name: Execute Terraform
         uses: hashicorp/setup-terraform@v1
 

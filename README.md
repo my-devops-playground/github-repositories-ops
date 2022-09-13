@@ -2,8 +2,8 @@
 
 This repository automates certain repository operations such as:
 
-- branch-protection
-- repository memberships (teams/people)
+- [repository memberships](#memberships) (teams/people)
+- [branch-protection](#branch-protection)
 
 ### Credentials
 
@@ -69,3 +69,7 @@ Each entry should be of the form of **organization/team-slug**:**permission** wh
 - push
 - maintain
 - admin
+
+#### Branch protection
+
+TODO

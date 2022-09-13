@@ -5,5 +5,5 @@ repositories:
         branch: master
         pull-requests:
           review-count: 1
-          codeowners: true
-      
+          codeowners:
+            ".github/": "@my-devops-playground/admins"

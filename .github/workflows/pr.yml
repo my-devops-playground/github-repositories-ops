@@ -30,8 +30,6 @@ jobs:
 
       - name: Execute Terraform
         uses: hashicorp/setup-terraform@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.TF_VAR_GITHUB_TOKEN }}
 
       - name: Terraform init
         id: init
@@ -45,6 +43,8 @@ jobs:
         id: plan
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color -input=false
+        env:
+          GITHUB_TOKEN: ${{ secrets.TF_VAR_GITHUB_TOKEN }}
         continue-on-error: true
 
       - name: Update Pull Request

@@ -2,7 +2,7 @@ name: devops
 on:
   push:
     branches:
-      - "kk"
+      - "master"
 jobs:
   devops:
     name: apply changes to repositories
@@ -19,3 +19,5 @@ jobs:
         run: terraform validate
       - name: Terraform apply
         run: terraform apply -auto-approve
+        env:
+          TF_VAR_GITHUB_TOKEN: ${{ secrets.TF_VAR_GITHUB_TOKEN }}

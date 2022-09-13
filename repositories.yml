@@ -1,11 +1,6 @@
 repositories:
 
     my-devops-playground/static-site:
-      memberships:
-        people:
-        teams:
-          "my-devops-playground/admins": "admin"
-
       branch-protection:
         branch: master
         pull-requests:

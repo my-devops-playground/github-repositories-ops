@@ -44,7 +44,7 @@ jobs:
         if: github.event_name == 'pull_request'
         run: terraform plan -no-color -input=false
         env:
-          GITHUB_TOKEN: ${{ secrets.TF_VAR_GITHUB_TOKEN }}
+          TF_VAR_GITHUB_TOKEN: ${{ secrets.TF_VAR_GITHUB_TOKEN }}
         continue-on-error: true
 
       - name: Update Pull Request

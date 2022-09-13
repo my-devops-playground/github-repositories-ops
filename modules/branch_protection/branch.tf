@@ -1,7 +1,7 @@
 resource "github_repository_file" "codeowners_file_upload" {
   repository          = data.github_repository.repository.name
   branch              = local.branch_protection.branch
-  file                = local.branch_protection.pull_requests.codeowners.file_path
+  file                = local.branch_protection.pull_requests.codeowners_file_path
   commit_message      = local.branch_protection.pull_requests.codeowners_commit_message
   commit_author       = local.branch_protection.pull_requests.codeowners_commit_author
   overwrite_on_create = local.branch_protection.pull_requests.codeowners_overwrite

@@ -20,6 +20,11 @@ jobs:
         with:
           sarif_file: tfsec.sarif
 
+  tfplan:
+    name: Terraform plan validation
+    runs-on: ubuntu-latest
+
+    steps:
       - name: Execute Terraform
         uses: hashicorp/setup-terraform@v1
 

@@ -1,7 +1,7 @@
 resource "github_branch_protection" "branch_protection" {
   for_each               = data.github_repository.repositories
   repository_id          = each.value.node_id
-  pattern                = tomap(local.configuration.repositories)[each.value.full_name].branch-protection.branch
+  pattern                = var.repositories[each.value.full_name].branch-protection.branch
   require_signed_commits = true
 
   required_pull_request_reviews {

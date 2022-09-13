@@ -1,3 +1,3 @@
 locals {
-  configuration = yamldecode(file("repositories.yml"))
+  configuration = jsondecode(file("repositories.json"))
 }

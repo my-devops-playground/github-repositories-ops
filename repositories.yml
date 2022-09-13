@@ -1,9 +1,0 @@
-repositories:
-
-    my-devops-playground/static-site:
-      branch-protection:
-        branch: master
-        pull-requests:
-          review-count: 1
-          codeowners:
-            ".github/": "@my-devops-playground/admins"
